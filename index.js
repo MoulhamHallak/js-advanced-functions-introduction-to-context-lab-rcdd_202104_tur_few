@@ -68,10 +68,8 @@ function findEmployeeByFirstName(srcArray, firstName) {
   return srcArray.find(e => {return e.firstName === firstName})
 }
 
-function calculatePayroll(array) {
-  let payroll = wagesEarnedOnDate.reduce(function(acc, curr){
-    return acc + wagesEarnedOnDate(obj, curr)
-  }, 0)
-  
-  return payroll
+
+function calculatePayroll(array){
+    let sum = array.map((e) => allWagesFor(e))
+    return sum.reduce((num, sum) => num + sum)
 }
